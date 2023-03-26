@@ -1,16 +1,16 @@
 package models
 
 type Transaction struct {
-    ID         int                   `json:"id"`
+    ID         int                   `json:"id" gorm:"type:int"`
     UserID     int                   `json:"-"`
     User       UserProfileResponse   `json:"user" gorm:"constraint:OnUpdate:CASCADE;OnDelete:CASCADE;"`
-    PartnerID  int                   `json:"partner_id"`
+    PartnerID  int                   `json:"partner_id" gorm:"type:int"`
     Partner    UserProfileResponse   `json:"-" gorm:"constraint:OnUpdate:CASCADE;OnDelete:CASCADE;"`
-    Day        string                `json:"day" gorm:"type: varchar(255)"`
-    Date       string                `json:"date" gorm:"type: varchar(255)"`
-    Status     string                `json:"status" gorm:"type: varchar(255)"`
-    Location   string                `json:"location" gorm:"type: varchar(255)"`
-    Distance float64 `json:"distance" gorm:"type:float"`
-    Fee         int                   `json:"deliv_fee" gorm:"type: int(55)"`
+    Day        string                `json:"day" gorm:"type:varchar(255)"`
+    Date       string                `json:"date" gorm:"type:varchar(255)"`
+    Status     string                `json:"status" gorm:"type:varchar(255)"`
+    Location   string                `json:"location" gorm:"type:varchar(255)"`
+    Distance   float64               `json:"distance" gorm:"type:float"`
+    Fee        int                   `json:"deliv_fee" gorm:"type:int"`
     Cart       []Cart                `json:"cart" gorm:"constraint:OnDelete:SET NULL;"`
 }
