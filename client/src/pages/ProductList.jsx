@@ -82,7 +82,7 @@ export default function ListProduct() {
                     return(
                         <tr className='text-center'  key={i}>
                             <td>{i+1}</td>
-                            <td className='d-flex justify-content-center align-items-center'>
+                            <td className='d-flex justify-content-center'>
                                 <div className='d-flex justify-content-center align-items-center' style={{width:'90px', height:'150px', overflow:'hidden'}}>
                                     <img className='img-fluid' src={item.image}/>
                                 </div>
