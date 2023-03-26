@@ -17,7 +17,22 @@ function SignUpForm(props) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [gender, setGender] = useState('');
+  const [location, setLocation] = useState("0,0");
   const [role, setRole] = useState('');
+
+  // Get current location
+  useEffect (() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+        const { longitude, latitude } = position.coords;
+        
+        setLocation({
+            coordinates: [longitude, latitude],
+        });
+    },(error) => console.log(error),
+    { enableHighAccuracy: true, maximumAge: 30000, timeout: 27000 }
+    )
+},[]);
+
 
   // Register handle
   const [showNotif, setNotif] = useState(false);
@@ -38,6 +53,7 @@ function SignUpForm(props) {
         name:     name,
         gender:     gender,
         phone:     phone,
+        location:     location,
         role: role,
       });
 

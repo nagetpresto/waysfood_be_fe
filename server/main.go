@@ -35,5 +35,5 @@ func main() {
 
 	var port = os.Getenv("PORT");
 	fmt.Println("server running localhost:" + port)
-	e.Logger.Fatal(e.Start("localhost:5000"))
+	e.Logger.Fatal(e.Start(":" + port))
 }
