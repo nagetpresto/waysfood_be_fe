@@ -2,9 +2,8 @@ import axios from "axios";
 
 // Create base URL API
 export const API = axios.create({
-  baseURL: "https:/waysfoodbefe-production.up.railway.app/api/v1"
+  baseURL: process.env.REACT_APP_BASEURL
 });
-console.log(process.env.REACT_APP_BASEURL)
 
 // Set Authorization Token Header
 export const setAuthToken = (token) => {
