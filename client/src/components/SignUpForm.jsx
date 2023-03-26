@@ -101,9 +101,9 @@ function SignUpForm(props) {
           <Form.Group className='mb-4' controlId="formBasicPassword">
             <Form.Select onChange={(e) => setGender(e.target.value)}>
               <option value="">Gender</option>
-              <option value="female">Female</option>
-              <option value="male">Male</option>
-              <option value="others">Others</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Others">Others</option>
             </Form.Select>
           </Form.Group>
 

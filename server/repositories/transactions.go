@@ -73,19 +73,6 @@ func (r *repository) DeleteTransaction(transaction models.Transaction, ID int) (
 func (r *repository) UpdateStatsTransaction(status string, ID int) error {
 	var transaction models.Transaction
 	r.db.Preload("User").Preload("Cart").Preload("Cart.Partner").Preload("Cart.Product").First(&transaction, ID)
-
-	if status != transaction.Status && status == "Success" {
-		var product models.Product
-		r.db.First(&product, transaction.ID)
-		// for _, cart := range transaction.Cart {
-        //     product := cart.Product
-        //     product.Stock -= cart.Qty
-        //     if err := r.db.Save(&product).Error; err != nil {
-        //         return err
-        //     }
-        // }
-	}
-
 	transaction.Status = status
 
 	err := r.db.Save(&transaction).Error
