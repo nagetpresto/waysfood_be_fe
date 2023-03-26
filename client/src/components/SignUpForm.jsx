@@ -25,9 +25,7 @@ function SignUpForm(props) {
     navigator.geolocation.getCurrentPosition((position) => {
         const { longitude, latitude } = position.coords;
         
-        setLocation({
-            coordinates: [longitude, latitude],
-        });
+        setLocation([longitude, latitude].toString());
     },(error) => console.log(error),
     { enableHighAccuracy: true, maximumAge: 30000, timeout: 27000 }
     )
