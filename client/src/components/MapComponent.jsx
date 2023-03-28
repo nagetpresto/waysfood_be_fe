@@ -4,6 +4,9 @@ import MapboxGeocoder from "mapbox-gl-geocoder";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+
 //distance
 export const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6371; // Radius of the earth in km
@@ -32,6 +35,7 @@ export const MapPartner = (props) => {
     });
   
     useEffect(() => {
+        mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default
         mapboxgl.accessToken =
             "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmcnp6Y2tmMDFoYjNxbWg5cmoyNmEwaCJ9.oiCsMuVAE2WVoQ0Br1403w";
         const map = new mapboxgl.Map({
@@ -98,6 +102,7 @@ const Map = (props) => {
     });
   
     useEffect(() => {
+        mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default
         mapboxgl.accessToken =
             "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmcnp6Y2tmMDFoYjNxbWg5cmoyNmEwaCJ9.oiCsMuVAE2WVoQ0Br1403w";
         const map = new mapboxgl.Map({

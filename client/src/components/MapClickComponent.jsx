@@ -4,6 +4,9 @@ import MapboxGeocoder from "mapbox-gl-geocoder";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+
 export const MapClickPartner = (props) => {
   const [selectedLocation, setSelectedLocation] = useState({
       name: "My current location",
@@ -11,6 +14,7 @@ export const MapClickPartner = (props) => {
   });
 
   useEffect(() => {
+    mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default
       mapboxgl.accessToken =
         "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmcnp6Y2tmMDFoYjNxbWg5cmoyNmEwaCJ9.oiCsMuVAE2WVoQ0Br1403w";
       const map = new mapboxgl.Map({
@@ -87,6 +91,8 @@ const MapClick = (props) => {
     });
   
     useEffect(() => {
+      mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default
+        
         mapboxgl.accessToken =
           "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmcnp6Y2tmMDFoYjNxbWg5cmoyNmEwaCJ9.oiCsMuVAE2WVoQ0Br1403w";
         const map = new mapboxgl.Map({
