@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-
-import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 import MapboxGeocoder from "mapbox-gl-geocoder";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
