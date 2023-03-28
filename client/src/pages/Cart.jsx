@@ -3,6 +3,7 @@ import 'aos/dist/aos.css';
 import { useEffect, useState } from "react";
 import {Container, Row, Modal, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useMutation } from 'react-query';
 
 import { API } from '../config/api';
 import Map from '../components/MapComponent';
@@ -173,7 +174,7 @@ function Cart(){
     // payment
     const navigate = useNavigate();
     const [showModalPay, setShowModalPay] = useState(false);
-    const handleSubmit = async (e) => {
+    const handleSubmit =  async (e) => {
         try {
         e.preventDefault();
 

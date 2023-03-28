@@ -12,7 +12,7 @@ export const MapClickPartner = (props) => {
 
   useEffect(() => {
       mapboxgl.accessToken =
-        "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmanVmOG8xMDRnMzN4cjUyNWh4bmN3dyJ9.avfrk4OdnYwEEYAnTokM8A";
+        "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmcnp6Y2tmMDFoYjNxbWg5cmoyNmEwaCJ9.oiCsMuVAE2WVoQ0Br1403w";
       const map = new mapboxgl.Map({
         container: "map2",
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
@@ -88,7 +88,7 @@ const MapClick = (props) => {
   
     useEffect(() => {
         mapboxgl.accessToken =
-          "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmanVmOG8xMDRnMzN4cjUyNWh4bmN3dyJ9.avfrk4OdnYwEEYAnTokM8A";
+          "pk.eyJ1IjoibmFnZXRwcmVzdG8iLCJhIjoiY2xmcnp6Y2tmMDFoYjNxbWg5cmoyNmEwaCJ9.oiCsMuVAE2WVoQ0Br1403w";
         const map = new mapboxgl.Map({
           container: "map",
           // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
