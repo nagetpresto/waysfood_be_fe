@@ -141,7 +141,7 @@ function Partner () {
     return(
         <div className="restaurant" data-aos="fade-down" data-aos-delay="200">
             <h4 className="mb-4">{rest && rest.name}, Menus</h4>
-            <Form className="d-flex col-3 mb-4">
+            {/* <Form className="d-flex col-3 mb-4">
                 <Form.Control
                 size="sm"
                 type="search"
@@ -150,7 +150,7 @@ function Partner () {
                 aria-label="Search"
                 />
                 <Button variant="outline-success">Search</Button>
-            </Form>
+            </Form> */}
             <Row className='pop-list'>
                 {
                     data?.map((rest, i) => {

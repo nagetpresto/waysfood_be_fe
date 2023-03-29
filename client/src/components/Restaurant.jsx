@@ -61,7 +61,7 @@ function Restaurant (props){
             </div>
             <div>
                 <h4 className="mb-4 mt-5">Restaurant Near You</h4>
-                <Form className="d-flex col-3 mb-4">
+                {/* <Form className="d-flex col-3 mb-4">
                     <Form.Control
                     size="sm"
                     type="search"
@@ -70,7 +70,7 @@ function Restaurant (props){
                     aria-label="Search"
                     />
                     <Button variant="outline-success">Search</Button>
-                </Form>
+                </Form> */}
                 <Row className='pop-list'>
                     {
                         data?.map((rest, i) => {

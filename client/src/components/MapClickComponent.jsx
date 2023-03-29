@@ -3,7 +3,6 @@ import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "mapbox-gl-geocoder";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
-
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
